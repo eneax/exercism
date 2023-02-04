@@ -56,3 +56,20 @@ export function limesToCut(wedgesNeeded, limes) {
   }
   return limesCut;
 }
+
+/**
+ * Determines which juices still need to be prepared after the end of the shift.
+ *
+ * @param {number} timeLeft
+ * @param {string[]} orders
+ * @returns {string[]} remaining orders after the time is up
+ */
+export function remainingOrders(timeLeft, orders) {
+  let time = 0;
+  let i = 0;
+  while (time < timeLeft && i < orders.length) {
+    time += timeToMixJuice(orders[i]);
+    i++;
+  }
+  return orders.slice(i);
+}
