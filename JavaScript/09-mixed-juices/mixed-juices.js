@@ -25,3 +25,34 @@ export function timeToMixJuice(name) {
       return 2.5;
   }
 }
+
+/**
+ * Calculates the number of limes that need to be cut
+ * to reach a certain supply.
+ * We can get 6 wedges from a 'small' lime, 8 wedges from a 'medium' lime and 10 from a 'large' lime.
+ *
+ * @param {number} wedgesNeeded
+ * @param {string[]} limes
+ * @returns {number} number of limes cut
+ */
+export function limesToCut(wedgesNeeded, limes) {
+  let limesCut = 0;
+  let wedges = 0;
+  let i = 0;
+  while (wedges < wedgesNeeded && i < limes.length) {
+    switch (limes[i]) {
+      case "small":
+        wedges += 6;
+        break;
+      case "medium":
+        wedges += 8;
+        break;
+      case "large":
+        wedges += 10;
+        break;
+    }
+    limesCut = i + 1;
+    i++;
+  }
+  return limesCut;
+}
