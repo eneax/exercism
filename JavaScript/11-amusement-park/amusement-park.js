@@ -27,3 +27,20 @@ export function revokeTicket(visitor) {
   visitor.ticketId = null;
   return visitor;
 }
+
+/**
+ * Determines the status a ticket has in the ticket tracking object.
+ *
+ * @param {Record<string, string|null>} tickets
+ * @param {string} ticketId
+ * @returns {string} ticket status
+ */
+export function ticketStatus(tickets, ticketId) {
+  if (!Object.keys(tickets).includes(ticketId)) {
+    return "unknown ticket id";
+  }
+  if (tickets[ticketId] === null) {
+    return "not sold";
+  }
+  return `sold to ${tickets[ticketId]}`;
+}
