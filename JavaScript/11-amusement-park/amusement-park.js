@@ -44,3 +44,22 @@ export function ticketStatus(tickets, ticketId) {
   }
   return `sold to ${tickets[ticketId]}`;
 }
+
+/**
+ * Determines the status a ticket has in the ticket tracking object
+ * and returns a simplified status message.
+ *
+ * @param {Record<string, string|null>} tickets
+ * @param {string} ticketId
+ * @returns {string} ticket status
+ */
+export function simpleTicketStatus(tickets, ticketId) {
+  const found = Object.keys(tickets).includes(ticketId);
+  const sold = tickets[ticketId] !== null;
+
+  if (!found || !sold) {
+    return "invalid ticket !!!";
+  }
+
+  return `${tickets[ticketId]}`;
+}
