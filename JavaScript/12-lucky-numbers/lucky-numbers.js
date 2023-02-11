@@ -13,3 +13,16 @@ export function twoSum(array1, array2) {
 
   return num1 + num2;
 }
+
+/**
+ * Checks whether a number is a palindrome.
+ *
+ * @param {number} value
+ * @returns {boolean} whether the number is a palindrome or not
+ */
+export function luckyNumber(value) {
+  const string = value.toString();
+  const reversed = string.split("").reverse().join("");
+
+  return string === reversed;
+}
