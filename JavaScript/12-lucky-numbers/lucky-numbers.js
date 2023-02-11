@@ -26,3 +26,30 @@ export function luckyNumber(value) {
 
   return string === reversed;
 }
+
+/**
+ * Determines the error message that should be shown to the user
+ * for the given input value.
+ *
+ * @param {string|null|undefined} input
+ * @returns {string} error message
+ */
+export function errorMessage(input) {
+  if (input === undefined || input === null) {
+    return "Required field";
+  }
+
+  if (input === "") {
+    return "Required field";
+  }
+
+  if (Number(input) === 0) {
+    return "Must be a number besides 0";
+  }
+
+  if (Number.isNaN(Number(input))) {
+    return "Must be a number besides 0";
+  }
+
+  return "";
+}
