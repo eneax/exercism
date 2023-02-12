@@ -20,3 +20,8 @@ export function cookingStatus(timer) {
     return "Not done, please wait.";
   }
 }
+
+// Task 2
+export function preparationTime(layers, timePerLayer = 2) {
+  return layers.length * timePerLayer;
+}
