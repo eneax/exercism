@@ -50,3 +50,15 @@ export function addSecretIngredient(friendsList, myList) {
   const secretIngredient = friendsList[friendsList.length - 1];
   myList.push(secretIngredient);
 }
+
+// Task 5
+export function scaleRecipe(recipe, portions) {
+  const scaledRecipe = {};
+  const scaledPortions = portions / 2;
+
+  for (const ingredient in recipe) {
+    scaledRecipe[ingredient] = recipe[ingredient] * scaledPortions;
+  }
+
+  return scaledRecipe;
+}
