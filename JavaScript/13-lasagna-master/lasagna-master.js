@@ -25,3 +25,22 @@ export function cookingStatus(timer) {
 export function preparationTime(layers, timePerLayer = 2) {
   return layers.length * timePerLayer;
 }
+
+// Task 3
+export function quantities(layers) {
+  let noodles = 0;
+  let sauce = 0;
+
+  layers.forEach((layer) => {
+    if (layer === "noodles") {
+      noodles += 50;
+    } else if (layer === "sauce") {
+      sauce += 0.2;
+    }
+  });
+
+  return {
+    noodles,
+    sauce,
+  };
+}
