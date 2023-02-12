@@ -44,3 +44,9 @@ export function quantities(layers) {
     sauce,
   };
 }
+
+// Task 4
+export function addSecretIngredient(friendsList, myList) {
+  const secretIngredient = friendsList[friendsList.length - 1];
+  myList.push(secretIngredient);
+}
