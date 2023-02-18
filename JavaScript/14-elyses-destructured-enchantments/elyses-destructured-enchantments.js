@@ -24,3 +24,15 @@ export function getSecondCard(deck) {
   const [_, secondCard] = deck;
   return secondCard;
 }
+
+/**
+ * Switch the position of the first two cards in the given deck
+ *
+ * @param {Card[]} deck
+ *
+ * @returns {Card[]} new deck with reordered cards
+ */
+export function swapTopTwoCards(deck) {
+  const [firstCard, secondCard, ...rest] = deck;
+  return [secondCard, firstCard, ...rest];
+}
