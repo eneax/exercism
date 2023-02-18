@@ -36,3 +36,16 @@ export function swapTopTwoCards(deck) {
   const [firstCard, secondCard, ...rest] = deck;
   return [secondCard, firstCard, ...rest];
 }
+
+/**
+ * Put the top card of the given deck into a separate discard pile
+ *
+ * @param {Card[]} deck
+ *
+ * @returns {[Card, Card[]]} the top card of the given
+ * deck and a new deck containing all the other cards
+ */
+export function discardTopCard(deck) {
+  const [firstCard, ...rest] = deck;
+  return [firstCard, rest];
+}
