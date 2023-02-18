@@ -49,3 +49,19 @@ export function discardTopCard(deck) {
   const [firstCard, ...rest] = deck;
   return [firstCard, rest];
 }
+
+/** @type Card[] **/
+const FACE_CARDS = ["jack", "queen", "king"];
+
+/**
+ * Insert face cards into the given deck
+ *
+ * @param {Card[]} deck
+ *
+ * @returns {Card[]} new deck where the second,
+ * third, and fourth cards are the face cards
+ */
+export function insertFaceCards(deck) {
+  const [firstCard, ...rest] = deck;
+  return [firstCard, ...FACE_CARDS, ...rest];
+}
