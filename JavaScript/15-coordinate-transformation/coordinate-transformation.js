@@ -19,3 +19,19 @@ export function translate2d(dx, dy) {
     return [x + dx, y + dy];
   };
 }
+
+/**
+ * Create a function that returns a function making use of a closure to
+ * perform a repeatable 2d scale of a coordinate pair.
+ *
+ * @param {number} sx the amount to scale the x component
+ * @param {number} sy the amount to scale the y component
+ *
+ * @returns {function} a function which takes an x, y parameter, returns the
+ *  scaled coordinate pair in the form [x, y]
+ */
+export function scale2d(sx, sy) {
+  return (x, y) => {
+    return [x * sx, y * sy];
+  };
+}
