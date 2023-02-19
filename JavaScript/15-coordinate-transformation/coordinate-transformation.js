@@ -51,3 +51,30 @@ export function composeTransform(f, g) {
     return g(...f(x, y));
   };
 }
+
+/**
+ * Return a function that memoizes the last result.
+ * If the arguments are the same as the last call, then memoized result returned.
+ *
+ * @param {function} f the transformation function to memoize, assumes takes two arguments 'x' and 'y'
+ *
+ * @returns {function} a function which takes x and y arguments, and will either return the saved result
+ *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
+ */
+export function memoizeTransform(f) {
+  let lastX = null;
+  let lastY = null;
+  let lastResult = null;
+
+  return (x, y) => {
+    if (x === lastX && y === lastY) {
+      return lastResult;
+    }
+
+    lastX = x;
+    lastY = y;
+    lastResult = f(x, y);
+
+    return lastResult;
+  };
+}
