@@ -35,3 +35,19 @@ export function scale2d(sx, sy) {
     return [x * sx, y * sy];
   };
 }
+
+/**
+ * Create a composition function that returns a function that combines two
+ * functions to perform a repeatable transformation
+ *
+ * @param {function} f the first function to apply
+ * @param {function} g the second function to apply
+ *
+ * @returns {function} a function which takes an x, y parameter, returns the
+ *  transformed coordinate pair in the form [x, y]
+ */
+export function composeTransform(f, g) {
+  return (x, y) => {
+    return g(...f(x, y));
+  };
+}
