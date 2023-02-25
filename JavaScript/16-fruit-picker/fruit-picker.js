@@ -35,3 +35,13 @@ export function onError() {
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
   order(query, onSuccessCallback, onErrorCallback);
 }
+
+/**
+ * @param {string} variety
+ * @param {number} quantity
+ * @return void
+ */
+export function postOrder(variety, quantity) {
+  const query = { variety, quantity };
+  orderFromGrocer(query, onSuccess, onError);
+}
