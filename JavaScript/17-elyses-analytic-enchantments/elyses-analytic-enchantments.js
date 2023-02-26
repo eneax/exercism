@@ -49,3 +49,25 @@ export function isEachCardEven(stack) {
 export function doesStackIncludeOddCard(stack) {
   return stack.some((num) => num % 2 !== 0);
 }
+
+/**
+ * Get the first odd card from the stack
+ *
+ * @param {number[]} stack
+ *
+ * @returns {number | undefined} the first odd value
+ */
+export function getFirstOddCard(stack) {
+  return stack.find((num) => num % 2 !== 0);
+}
+
+/**
+ * Determine the position of the first card that is even
+ *
+ * @param {number[]} stack
+ *
+ * @returns {number} position of the first card that is even
+ */
+export function getFirstEvenCardPosition(stack) {
+  return stack.findIndex((num) => num % 2 === 0);
+}
