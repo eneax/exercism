@@ -27,3 +27,14 @@ export function getCardPosition(stack, card) {
 export function doesStackIncludeCard(stack, card) {
   return stack.includes(card);
 }
+
+/**
+ * Determine if each card is even
+ *
+ * @param {number[]} stack
+ *
+ * @returns {boolean} true if all cards are even, false otherwise
+ */
+export function isEachCardEven(stack) {
+  return stack.every((card) => card % 2 === 0);
+}
