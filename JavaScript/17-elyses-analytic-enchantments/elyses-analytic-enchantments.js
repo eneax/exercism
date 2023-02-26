@@ -38,3 +38,14 @@ export function doesStackIncludeCard(stack, card) {
 export function isEachCardEven(stack) {
   return stack.every((card) => card % 2 === 0);
 }
+
+/**
+ * Check if stack contains odd-value card
+ *
+ * @param {number[]} stack
+ *
+ * @returns {boolean} true if the array contains odd card, false otherwise
+ */
+export function doesStackIncludeOddCard(stack) {
+  return stack.some((num) => num % 2 !== 0);
+}
