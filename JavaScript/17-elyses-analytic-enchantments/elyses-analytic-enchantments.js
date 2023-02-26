@@ -15,3 +15,15 @@
 export function getCardPosition(stack, card) {
   return stack.indexOf(card);
 }
+
+/**
+ * Determine if the stack contains the card
+ *
+ * @param {number[]} stack
+ * @param {number} card
+ *
+ * @returns {boolean} true if card is in the stack, false otherwise
+ */
+export function doesStackIncludeCard(stack, card) {
+  return stack.includes(card);
+}
