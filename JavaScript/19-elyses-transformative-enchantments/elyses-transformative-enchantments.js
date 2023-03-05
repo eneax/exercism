@@ -55,3 +55,14 @@ export function sandwichTrick(deck) {
 
   return deck;
 }
+
+/**
+ * Removes every card from the deck except 2s.
+ *
+ * @param {number[]} deck
+ *
+ * @returns {number[]} deck with only 2s
+ */
+export function twoIsSpecial(deck) {
+  return deck.filter((card) => card === 2);
+}
