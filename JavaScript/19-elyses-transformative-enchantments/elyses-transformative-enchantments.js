@@ -66,3 +66,14 @@ export function sandwichTrick(deck) {
 export function twoIsSpecial(deck) {
   return deck.filter((card) => card === 2);
 }
+
+/**
+ * Returns a perfectly order deck from lowest to highest.
+ *
+ * @param {number[]} deck shuffled deck
+ *
+ * @returns {number[]} ordered deck
+ */
+export function perfectlyOrdered(deck) {
+  return deck.sort((a, b) => a - b);
+}
