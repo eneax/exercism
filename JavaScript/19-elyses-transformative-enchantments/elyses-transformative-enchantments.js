@@ -38,3 +38,20 @@ export function threeOfEachThree(deck) {
 export function middleTwo(deck) {
   return deck.slice(4, 6);
 }
+
+/**
+ * Moves the outside two cards to the middle.
+ *
+ * @param {number[]} deck with even number of cards
+ *
+ * @returns {number[]} transformed deck
+ */
+export function sandwichTrick(deck) {
+  const top = deck.shift();
+  const bottom = deck.pop();
+  const middleIndex = Math.floor(deck.length / 2);
+
+  deck.splice(middleIndex, 0, bottom, top);
+
+  return deck;
+}
