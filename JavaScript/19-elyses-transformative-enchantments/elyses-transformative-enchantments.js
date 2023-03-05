@@ -77,3 +77,14 @@ export function twoIsSpecial(deck) {
 export function perfectlyOrdered(deck) {
   return deck.sort((a, b) => a - b);
 }
+
+/**
+ * Reorders the deck so that the top card ends up at the bottom.
+ *
+ * @param {number[]} deck
+ *
+ * @returns {number[]} reordered deck
+ */
+export function reorder(deck) {
+  return deck.reverse();
+}
