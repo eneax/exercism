@@ -26,3 +26,15 @@ export function threeOfEachThree(deck) {
     return [...acc, card];
   }, []);
 }
+
+/**
+ * Extracts the middle two cards from a deck.
+ * Assumes a deck is always 10 cards.
+ *
+ * @param {number[]} deck of 10 cards
+ *
+ * @returns {number[]} deck with only two middle cards
+ */
+export function middleTwo(deck) {
+  return deck.slice(4, 6);
+}
