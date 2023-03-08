@@ -30,3 +30,16 @@ export function buildBirthdaySign(age) {
 
   return `Happy Birthday! What a ${ageLabel} fellow you are.`;
 }
+
+/**
+ * Build a graduation sign that includes multiple lines.
+ *
+ * @param {string} name
+ * @param {number} year
+ *
+ * @returns {string} multi-line template string
+ */
+
+export function graduationFor(name, year) {
+  return `Congratulations ${name}!\nClass of ${year}`;
+}
