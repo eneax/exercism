@@ -43,3 +43,19 @@ export function buildBirthdaySign(age) {
 export function graduationFor(name, year) {
   return `Congratulations ${name}!\nClass of ${year}`;
 }
+
+/**
+ * Determine cost based on each character of sign parameter that builds
+ * the template string that includes the currency parameter.
+ *
+ * @param {string} sign
+ * @param {string} currency
+ *
+ * @returns {string} cost to create the sign
+ */
+
+export function costOf(sign, currency) {
+  const cost = 20 + sign.length * 2;
+
+  return `Your sign costs ${cost.toFixed(2)} ${currency}.`;
+}
