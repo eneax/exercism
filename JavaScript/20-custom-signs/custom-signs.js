@@ -16,3 +16,17 @@
 export function buildSign(occasion, name) {
   return `Happy ${occasion} ${name}!`;
 }
+
+/**
+ * Build a birthday sign that conditionally formats the return string.
+ *
+ * @param {number} age
+ *
+ * @returns {string} template string based on age
+ */
+
+export function buildBirthdaySign(age) {
+  const ageLabel = age >= 50 ? "mature" : "young";
+
+  return `Happy Birthday! What a ${ageLabel} fellow you are.`;
+}
