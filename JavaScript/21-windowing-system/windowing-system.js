@@ -28,4 +28,19 @@ export function ProgramWindow() {
   this.screenSize = new Size(800, 600);
   this.size = new Size();
   this.position = new Position();
+  this.resize = function (newSize) {
+    if (newSize.width < 1) {
+      newSize.width = 1;
+    }
+    if (newSize.height < 1) {
+      newSize.height = 1;
+    }
+    if (newSize.width > this.screenSize.width - this.position.x) {
+      newSize.width = this.screenSize.width - this.position.x;
+    }
+    if (newSize.height > this.screenSize.height - this.position.y) {
+      newSize.height = this.screenSize.height - this.position.y;
+    }
+    this.size = newSize;
+  };
 }
