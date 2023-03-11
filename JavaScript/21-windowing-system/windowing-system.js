@@ -28,6 +28,7 @@ export function ProgramWindow() {
   this.screenSize = new Size(800, 600);
   this.size = new Size();
   this.position = new Position();
+
   this.resize = function (newSize) {
     if (newSize.width < 1) {
       newSize.width = 1;
@@ -42,5 +43,21 @@ export function ProgramWindow() {
       newSize.height = this.screenSize.height - this.position.y;
     }
     this.size = newSize;
+  };
+
+  this.move = function (newPosition) {
+    if (newPosition.x < 0) {
+      newPosition.x = 0;
+    }
+    if (newPosition.y < 0) {
+      newPosition.y = 0;
+    }
+    if (newPosition.x > this.screenSize.width - this.size.width) {
+      newPosition.x = this.screenSize.width - this.size.width;
+    }
+    if (newPosition.y > this.screenSize.height - this.size.height) {
+      newPosition.y = this.screenSize.height - this.size.height;
+    }
+    this.position = newPosition;
   };
 }
