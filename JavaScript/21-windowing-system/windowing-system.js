@@ -61,3 +61,10 @@ export function ProgramWindow() {
     this.position = newPosition;
   };
 }
+
+export function changeWindow(window) {
+  window.resize(new Size(400, 300));
+  window.move(new Position(100, 150));
+
+  return window;
+}
