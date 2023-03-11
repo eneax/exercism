@@ -14,3 +14,12 @@ export function Size(width = 80, height = 60) {
     this.height = newHeight;
   };
 }
+
+export function Position(x = 0, y = 0) {
+  this.x = x;
+  this.y = y;
+  this.move = function (newX, newY) {
+    this.x = newX;
+    this.y = newY;
+  };
+}
