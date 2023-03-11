@@ -23,3 +23,9 @@ export function Position(x = 0, y = 0) {
     this.y = newY;
   };
 }
+
+export function ProgramWindow() {
+  this.screenSize = new Size(800, 600);
+  this.size = new Size();
+  this.position = new Position();
+}
