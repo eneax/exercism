@@ -15,3 +15,16 @@ export function removeDuplicates(playlist) {
   const uniqueTracks = new Set(playlist);
   return [...uniqueTracks];
 }
+
+/**
+ * Checks whether a playlist includes a track.
+ *
+ * @param {string[]} playlist
+ * @param {string} track
+ * @returns {boolean} whether the track is in the playlist
+ */
+
+export function hasTrack(playlist, track) {
+  const uniqueTracks = new Set(playlist);
+  return uniqueTracks.has(track);
+}
