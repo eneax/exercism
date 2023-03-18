@@ -43,3 +43,18 @@ export function addTrack(playlist, track) {
 
   return [...uniqueTracks];
 }
+
+/**
+ * Deletes a track from a playlist.
+ *
+ * @param {string[]} playlist
+ * @param {string} track
+ * @returns {string[]} new playlist
+ */
+
+export function deleteTrack(playlist, track) {
+  const uniqueTracks = new Set(playlist);
+  uniqueTracks.delete(track);
+
+  return [...uniqueTracks];
+}
