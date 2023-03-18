@@ -28,3 +28,18 @@ export function hasTrack(playlist, track) {
   const uniqueTracks = new Set(playlist);
   return uniqueTracks.has(track);
 }
+
+/**
+ * Adds a track to a playlist.
+ *
+ * @param {string[]} playlist
+ * @param {string} track
+ * @returns {string[]} new playlist
+ */
+
+export function addTrack(playlist, track) {
+  const uniqueTracks = new Set(playlist);
+  uniqueTracks.add(track);
+
+  return [...uniqueTracks];
+}
