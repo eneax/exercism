@@ -58,3 +58,21 @@ export function deleteTrack(playlist, track) {
 
   return [...uniqueTracks];
 }
+
+/**
+ * Lists the unique artists in a playlist.
+ *
+ * @param {string[]} playlist
+ * @returns {string[]} list of artists
+ */
+
+export function listArtists(playlist) {
+  const uniqueArtists = new Set();
+
+  playlist.forEach((track) => {
+    const artist = track.split(" - ")[1];
+    uniqueArtists.add(artist);
+  });
+
+  return [...uniqueArtists];
+}
