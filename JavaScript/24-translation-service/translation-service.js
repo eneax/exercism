@@ -27,7 +27,7 @@ export class TranslationService {
    * @returns {Promise<string>}
    */
   free(text) {
-    throw new Error("Implement the free function");
+    return this.api.fetch(text).then(({ translation }) => translation);
   }
 
   /**
