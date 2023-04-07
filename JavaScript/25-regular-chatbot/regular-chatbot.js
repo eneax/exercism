@@ -23,3 +23,18 @@ export function removeEmoji(message) {
   const regex = /emoji\d+/g;
   return message.replace(regex, "");
 }
+
+/**
+ * Given a certain phone number, help the chatbot recognize whether it is in the correct format.
+ *
+ * @param {string} number
+ * @returns {string} the Chatbot response to the phone Validation
+ */
+
+export function checkPhoneNumber(number) {
+  const regex = /^(\(\+\d{2}\))\s\d{3}-\d{3}-\d{3}$/;
+  const successMessage = "Thanks! You can now download me to your phone.";
+  const errorMessage = `Oops, it seems like I can't reach out to ${number}`;
+
+  return regex.test(number) ? successMessage : errorMessage;
+}
