@@ -50,3 +50,16 @@ export function getURL(userInput) {
   const regex = /(?<=\s)(\w+\.\w+)(?=\s|$)/g;
   return userInput.match(regex);
 }
+
+/**
+ * Greet the user using the full name data from the profile.
+ *
+ * @param {string} fullName
+ * @returns {string} Greeting from the chatbot
+ */
+
+export function niceToMeetYou(fullName) {
+  const regex = /(\w+), (\w+)/;
+  const match = fullName.match(regex);
+  return `Nice to meet you, ${match[2]} ${match[1]}`;
+}
