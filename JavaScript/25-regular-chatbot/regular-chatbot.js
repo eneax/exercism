@@ -38,3 +38,15 @@ export function checkPhoneNumber(number) {
 
   return regex.test(number) ? successMessage : errorMessage;
 }
+
+/**
+ * Given a certain response from the user, help the chatbot get only the URL.
+ *
+ * @param {string} userInput
+ * @returns {string[] | null} all the possible URL's that the user may have answered
+ */
+
+export function getURL(userInput) {
+  const regex = /(?<=\s)(\w+\.\w+)(?=\s|$)/g;
+  return userInput.match(regex);
+}
