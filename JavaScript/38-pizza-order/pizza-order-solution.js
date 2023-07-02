@@ -7,32 +7,26 @@
  * @returns {number} the price of the pizza
  */
 
+const PIZZAS = {
+  Margherita: 7,
+  Caprese: 9,
+  Formaggio: 10,
+};
+
+const EXTRAS = {
+  ExtraSauce: 1,
+  ExtraToppings: 2,
+};
+
 export function pizzaPrice(pizza, ...extras) {
   // base case: if there are no extras, return the price of the pizza
   if (extras.length === 0) {
-    switch (pizza) {
-      case "Margherita":
-        return 7;
-      case "Caprese":
-        return 9;
-      case "Formaggio":
-        return 10;
-      default:
-        throw new Error("Invalid pizza");
-    }
+    return PIZZAS[pizza];
   }
 
   // recursive case: if there are extras, add the price of the extra to the price of the pizza
-  const [firstExtra, ...restOfExtras] = extras;
-
-  switch (firstExtra) {
-    case "ExtraSauce":
-      return 1 + pizzaPrice(pizza, ...restOfExtras);
-    case "ExtraToppings":
-      return 2 + pizzaPrice(pizza, ...restOfExtras);
-    default:
-      throw new Error("Invalid extra");
-  }
+  const [extra, ...rest] = extras;
+  return EXTRAS[extra] + pizzaPrice(pizza, ...rest);
 }
 
 /**
@@ -42,8 +36,6 @@ export function pizzaPrice(pizza, ...extras) {
  * @returns {number} the price of the total order
  */
 export function orderPrice(pizzaOrders) {
-  // implement this function using reduce
-
   return pizzaOrders.reduce((total, pizzaOrder) => {
     const { pizza, extras } = pizzaOrder;
     return total + pizzaPrice(pizza, ...extras);
