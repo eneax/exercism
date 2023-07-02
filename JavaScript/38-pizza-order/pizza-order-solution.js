@@ -34,3 +34,18 @@ export function pizzaPrice(pizza, ...extras) {
       throw new Error("Invalid extra");
   }
 }
+
+/**
+ * Calculate the prize of the total order, given individual orders
+ *
+ * @param {PizzaOrder[]} pizzaOrders a list of pizza orders
+ * @returns {number} the price of the total order
+ */
+export function orderPrice(pizzaOrders) {
+  // implement this function using reduce
+
+  return pizzaOrders.reduce((total, pizzaOrder) => {
+    const { pizza, extras } = pizzaOrder;
+    return total + pizzaPrice(pizza, ...extras);
+  }, 0);
+}
